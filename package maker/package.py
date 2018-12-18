@@ -49,7 +49,7 @@ def install():
         os.system("scp " + "linux490@" + deploymentIP + ":/packages/" + selection + str(latestVersion) + ".tar.gz linux490@" + installIP + ":/packages")
         os.system("ssh linux490@" + installIP + " 'tar xf /packages/" + packageName + " -C /packages/unzipped/'")
         #os.system("ssh linux490@" + installIP + " cp -a /packages/unzipped/" + selection.lower() + "/. /var/www/html")
-        os.system("ssh linux490@" + installIP + " cp -a /packages/unzipped/" + "/. /var/www/html")
+        os.system("ssh linux490@" + installIP + " cp -a /packages/unzipped/" + " /var/www/html")
 
     if latestRollback == "2":
         mycursor = cnx.cursor()
@@ -69,7 +69,7 @@ def install():
         os.system("scp " + "linux490@" + deploymentIP + ":/packages/" + packageName + " linux490@" + installIP + ":/packages")
         os.system("ssh linux490@" + installIP + " 'tar xf /packages/" + packageName + " -C /packages/unzipped/'")
         #os.system("ssh linux490@" + installIP + " cp -a /packages/unzipped/" + selection.lower() + "/. /var/www/html")
-        os.system("ssh linux490@" + installIP + " cp -a /packages/unzipped/" + "/. /var/www/html")
+        os.system("ssh linux490@" + installIP + " cp -a /packages/unzipped/" + " /var/www/html")
 
 def build():
     print("You can make a package for:")

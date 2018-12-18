@@ -67,10 +67,9 @@ function SendSearchRequest()
     <div id='cssmenu'>
     <ul>
        <li class='active'><a href='Homepage.php'><span>Pokedex</span></a></li>
-       <li><a href='plusDatabase.php'><span>+Databse</span></a></li>
-       <li><a href='#'><span>Build your Team</span></a></li>
-        <li><a href='#'><span>Team Suggestions</span></a></li>
-        <li><a href='#'><span>Forums</span></a></li>
+       <li><a href='Teams.php'><span>Create A Team</span></a></li>
+        <li><a href='TeamBuilder.php'><span>Generate A Team</span></a></li>
+        <li><a href='Forum/index.php'><span>Forum</span></a></li>
        <li class='last'><a href='Homepage.php?Loggedout=true'><span>Logout</span></a></li>
     </ul>
     </div>

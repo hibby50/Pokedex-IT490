@@ -25,27 +25,12 @@ function requestProcessor2($request)
           $addResults = addToDatabase($request['pokemonname']);
           //$thestuff2 = json_decode($temp,true);
           return $addResults;
+          
   }
   return array("returnCode" => '0', 'message'=>"Server received request and processed");
 }
 
-class customException extends Exception {
-  public function errorMessage() {
-    //error message
-    $errorMsg = 'Error on line '.$this->getLine().' in '.$this->getFile()
-    .': <b>'.$this->getMessage().'</b> is not a valid E-Mail address';
-    return $errorMsg;
-  }
-}
-
-try {
-    $server2 = new rabbitMQServer("DMZServerinitializer.ini","mainDMZ");
-    throw new customException();
-    }
-catch(customException $e) {
-    $server2 = new rabbitMQServer("DMZServerinitializer.ini","backupDMZ");
-    echo "Using backup server";
-}
+$server2 = new rabbitMQServer("DMZServerinitializer.ini","mainDMZ");
 
 $server2->process_requests('requestProcessor2');
 exit();

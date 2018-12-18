@@ -15,14 +15,14 @@ $testresponse = "";
 switch ($request["type"])
 {
     case "searchpoke":
-        $searchClient = new rabbitMQClient("DMZServerinitializer.ini","testServer2");
+        $searchClient = new rabbitMQClient("LOGINServerinitializer.ini","mainServer");
         $searchRequest = array();
         $searchRequest['type'] = "searchpoke";
         $searchRequest['pokemonname'] = $_POST["pname"];
         $response = $searchClient->send_request($searchRequest);
     break;
     case "addpoke":
-        $addClient = new rabbitMQClient("DMZServerinitializer.ini","testServer2");
+        $addClient = new rabbitMQClient("DMZServerinitializer.ini","mainDMZ");
         $addRequest = array();
         $addRequest['type'] = "addpoke";
         $addRequest['pokemonname'] = $_POST["pname"];
